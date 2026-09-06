@@ -40,13 +40,11 @@ Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설�
 |UI|인게임 전투|탈출|
 |-|-|-|
 |![sd](docs/images/lobby_option.png)|![sd](docs/images/ingame.png)|![sd](docs/images/result.png)|
- ---
 
 #### AI 도구를 활용한 에셋 제작 과정
 |컨셉 아트|3D 모델링|리깅 및 애니메이션|Unity 통한 적용|
 |-|-|-|-|
 |![sd](docs/images/glint_concept.png)|![sd](docs/images/glint_3d_model.png)|![sd](docs/images/glint_mixamo.png)|![](docs/images/lobby.png)|
- ---
 
 **Links**
 
