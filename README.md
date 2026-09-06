@@ -14,7 +14,8 @@
   </tr>
   <tr>
     <td valign="bottom">
-      <b>기술 스택</b> : C++ · C# · Unity · IOCP · io_uring · Linux · Node.js · Redis · MySQL
+      <b>기술 스택</b> : C++ · C# · Unity · IOCP · io_uring · Linux · Node.js · Redis · MySQL<br/>
+      <b>인프라</b> : Oracle Cloud · AWS · Cloudflare
     </td>
   </tr>
 </table>
@@ -33,6 +34,7 @@
 | **개발 인원** | 1인 |
 | **담당 영역** | Client / Server / Networking / Database / Cloud Deployment |
 | **주요 기술** | C++17 · C# · Unity · Linux · io_uring · UDP/RUDP · Redis · MySQL |
+| **인프라** | Oracle Cloud · MySQL HeatWave · Cloudflare |
 
 Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설계·구현한 멀티플레이어 Extraction Shooter 프로젝트입니다. 공개 환경에서 동작 중이며, 현재 직접 플레이해볼 수 있습니다.
 
