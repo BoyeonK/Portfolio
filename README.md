@@ -69,15 +69,15 @@ Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설�
 >
 > 실제 플레이 화면과 주요 구현 내용은 Client Repository에서 확인할 수 있습니다.
 
-- HTTP REST와 Custom UDP/RUDP를 분리한 Client Networking 구조
 - Network Worker Thread와 Main Thread Job Queue를 통한 Unity Main Thread 경계 관리
+- HTTP REST와 Custom UDP/RUDP를 분리한 Client Networking 구조
 - Lobby / Inventory / Shop / Loadout / Matchmaking UI 및 게임 흐름 구현
-- 이동, 조준, 반동, 발사 및 상호작용을 포함한 Combat System 구현
 - Server-authoritative Inventory Snapshot과 Version 기반 상태 동기화
-- Local / Pending 상태를 구분한 Action State Machine을 통해 중복 행동 요청 방지
-- Top-view Camera와 RenderTexture를 활용한 Map UI 구현
 - AI 기반 도구, Tripo3D, Mixamo를 활용한 Character Asset 제작 및 Animation 적용
+- 이동, 조준, 반동, 발사 및 상호작용을 포함한 Combat System 구현
 - Skeleton Bone 정보를 이용한 Runtime Capsule Hitbox 자동 생성
+- Action State Machine을 통한 재장전·무기 교체 등 행동 요청의 상태 관리
+- Character State Machine을 통한 캐릭터 행동 상태 제어 및 상황에 맞는 Animation 연출 적용
 
 </details>
 
