@@ -95,8 +95,73 @@ Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설�
 
 ---
 
-### Minigame Partyroom
+<br/>
 
-추가중
+<hr/>
+
+<br/>
+
+
+### MiniGame Partyroom
+
+> **실시간 멀티플레이 미니게임 — Client / Server 1인 개발**
+
+| 항목 | 내용 |
+|---|---|
+| **개발 기간** | 2025.07 ~ 2026.01 |
+| **개발 인원** | 1인 |
+| **담당 영역** | Client / Server / Networking / Database / Cloud Deployment |
+| **주요 기술** | C++17 · C# · Unity · IOCP · gRPC · Protocol Buffers · SQL Server |
+
+C++ 기반 게임 서버와 Unity 클라이언트를 구성하고, Race, PingPong, 호박쪼개기 3종의 실시간 멀티플레이 미니게임을 구현한 프로젝트입니다.
+
+IOCP Network 구조, Actor 기반 Event Processing, Windows SLIST 기반 Object Pool은 게임 서버 구조를 학습하는 과정에서 익힌 내용을 프로젝트에 적용했습니다. 이를 기반으로 Protocol, DB Gateway, Session 보안, Matchmaking 및 각 MiniGame의 Server / Client Logic을 구성했습니다.
+
+#### 미니게임
+
+| 시작화면 | 메뉴 창 | 게임 선택 | 호박 쪼개기 (인게임) |
+|---|---|---|---|
+| ![미니게임_시작화면](docs/images/minigame_gamestart.jpg) |![미니게임_기록](docs/images/minigame_lobby_record.jpg)| ![미니게임_게임선택](docs/images/minigame_lobby_game_select.jpg) | ![미니게임_호박](docs/images/minigame_pumpkin.jpg) |
+
+**Links**
+
+- [Repository](https://github.com/BoyeonK/minigame)
+- [플레이 영상](<!-- Video URL -->)
+
+<details>
+<summary><b>상세 구현 내용 보기</b></summary>
+
+<br/>
+
+#### Server
+
+> 게임 서버 구조를 학습하며 익힌 IOCP Network Core와 Actor 기반 Event Processing을 실제 Multiplayer Game에 적용했습니다.
+>
+> 이를 기반으로 프로젝트에 필요한 DB 연동, Session 보안, Matchmaking 및 게임별 Server Logic을 구성했습니다.
+
+- Overlapped I/O 기반 IOCP Network 구조 학습 및 프로젝트 적용
+- Actor Event Queue를 통한 GameRoom 단위 상태 변경 직렬화
+- Windows SLIST 기반 Object Pool 구조 적용
+- Protocol Buffers 기반 Client / Server Packet Protocol 구성
+- Async gRPC 기반 C++ DB Gateway 분리
+- ODBC를 통한 SQL Server 연동
+- RSA Key Exchange + AES-256-GCM 기반 Session 암호화
+- Session State에 따른 Packet Validation 및 비정상 요청 차단
+- Elo 기반 Matchmaking 구현
+- AWS 환경에서의 Server 배포 경험
+
+#### Client
+
+> Unity / C#으로 Lobby와 3종 MiniGame의 전체 Client Logic을 구현하고, 게임 특성에 따라 서로 다른 상태 동기화 방식을 적용했습니다.
+
+- TCP Socket 기반 Server 통신 및 Protocol Buffers Packet 처리
+- Network Thread에서 수신한 작업을 Main Thread Job Queue를 통해 Unity Scene에 전달
+- Lobby / Matchmaking / Loading 및 게임별 Network Manager 구성
+- Race의 Server State 기반 Player Movement 동기화 및 Client Interpolation
+- PingPong의 Object State / Collision Event 기반 동기화
+- 호박쪼개기의 Slot State / Hit Event 기반 동기화
+- 반복적으로 생성되는 GameObject에 Client-side Object Pool 적용
+
+</details>
 
 ---
