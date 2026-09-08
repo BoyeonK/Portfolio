@@ -38,6 +38,9 @@
 
 Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설계·구현한 멀티플레이어 Extraction Shooter 프로젝트입니다. 공개 환경에서 동작 중이며, 현재 직접 플레이해볼 수 있습니다.
 
+- [플레이 영상 - YouTube](https://www.youtube.com/watch?v=wjMVhZvyEE0)
+- [Windows 빌드 다운로드](https://drive.google.com/file/d/1jEZZuNcX1D1u2ui_NkjkqWleFZ8hI3tX/view?usp=sharing)
+
 #### 인게임 스크린샷
 |UI|인게임 전투|탈출|
 |-|-|-|
@@ -52,8 +55,6 @@ Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설�
 
 - [Server Repository](https://github.com/BoyeonK/ExtractionServer)
 - [Client Repository](https://github.com/BoyeonK/ExtractionClient)
-- [플레이 영상 - YouTube](https://www.youtube.com/watch?v=wjMVhZvyEE0)
-- [Windows 빌드 다운로드](https://drive.google.com/file/d/1jEZZuNcX1D1u2ui_NkjkqWleFZ8hI3tX/view?usp=sharing)
 
 <details>
 <summary><b>상세 구현 내용 보기</b></summary>
