@@ -124,7 +124,7 @@ IOCP Network 구조, Actor 기반 Event Processing, Windows SLIST 기반 Object 
 **Links**
 
 - [Repository](https://github.com/BoyeonK/minigame)
-- [플레이 영상](<!-- Video URL -->)
+- [플레이 영상](https://www.youtube.com/watch?v=T7g7xGlRrK4)
 
 <details>
 <summary><b>상세 구현 내용 보기</b></summary>
