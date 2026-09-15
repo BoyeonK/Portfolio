@@ -146,7 +146,6 @@ IOCP Network 구조, Actor 기반 Event Processing, Windows SLIST 기반 Object 
 - RSA Key Exchange + AES-256-GCM 기반 Session 암호화
 - Session State에 따른 Packet Validation 및 비정상 요청 차단
 - Elo 기반 Matchmaking 구현
-- AWS 환경에서의 Server 배포 경험
 
 #### Client
 
