@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Structure
 
 - `README.md` — 포트폴리오 본문. 소개, 기술 스택, 프로젝트 목록으로 구성됩니다.
+- `progress.md` — 완료된 작업 기록과 남은 TODO, 알려진 이슈를 정리하는 문서. 할 일 관리는 이 파일 하나로 합니다.
 - `docs/images/` — README에서 참조하는 이미지 파일.
 
 ## Conventions
