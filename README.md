@@ -33,7 +33,7 @@
 | **개발 기간** | 2026.02 ~ 진행 중 |
 | **개발 인원** | 1인 |
 | **담당 영역** | Client / Server / Networking / Database / Cloud Deployment |
-| **주요 기술** | C++17 · C# · Unity · Linux · io_uring · UDP/RUDP · Redis · MySQL |
+| **주요 기술** | C++17 · C# · Unity · Linux · io_uring · UDP/RUDP · Node.js · Redis · MySQL |
 | **인프라** | Oracle Cloud · MySQL HeatWave · Cloudflare |
 
 Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설계·구현한 멀티플레이어 Extraction Shooter 프로젝트입니다. 공개 환경에서 동작 중이며, 현재 직접 플레이해볼 수 있습니다.
@@ -67,14 +67,22 @@ Unity 클라이언트부터 Linux 기반 전용 게임 서버까지 직접 설�
 > 
 > 각 항목의 구체적인 구현 과정과 설계 의도는 Server Repository에 정리했습니다.
 
-- `io_uring` 기반 비동기 네트워크 서버
-- Reliable / Unreliable Channel을 지원하는 Custom RUDP
 - Main Server / HTTP API Server / Dedicated Game Server 멀티 프로세스 구조
-- Dedicated Process 동적 생성 및 GameRoom Capacity 관리
-- Redis + Lua Script 기반 Matchmaking 상태 일관성 관리
-- Unix Domain Socket 기반 Process 간 IPC
-- Redis / MySQL HeatWave 기반 Session 및 영속 데이터 관리
-- Oracle Cloud + Cloudflare 기반 실제 외부 접속 환경 구축
+  - Main Server (C++17)
+    - Redis + Lua Script 기반 Matchmaking 상태 일관성 관리
+    - Unix Domain Socket 기반 Process 간 IPC
+    - Dedicated Process 생성 및 GameRoom Capacity 관리
+    - Dedicated Game Server의 데이터 요청을 처리하는 DB Proxy 구성
+  - HTTP API Server (Node.js / Express)
+    - Account 생성·인증 및 Redis 기반 Session 관리
+    - Lobby Inventory / Shop 및 Matchmaking API 처리
+    - Matchmaking 완료 후 Dedicated Game Server 접속 준비 및 Session Key 전달
+  - Dedicated Game Server
+    - io_uring 기반 비동기 네트워크 서버
+    - Reliable / Unreliable Channel을 지원하는 Custom RUDP
+    - GameRoom 단위의 실시간 Game Logic 처리
+- Oracle Cloud + Cloudflare 기반 Public Cloud 배포
+  - 실제 외부 Client가 접속하여 플레이할 수 있는 환경 구성
 
 #### Client
 
